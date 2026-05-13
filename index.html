@@ -244,11 +244,38 @@
 
   <section class="poster-section">
     <div class="poster-wrap">
+      <div class="scroll-text">
+  SCROLL
+</div>
       <div class="poster">
         <img src="poster.jpg" class="real-poster" alt="UNVEIL 포스터">
       </div>
     </div>
   </section>
+  .scroll-text{
+  position:absolute;
+  bottom:38px;
+  left:50%;
+  transform:translateX(-50%);
+  font-size:12px;
+  letter-spacing:4px;
+  color:#ffffff;
+  opacity:.7;
+  animation:blink 1.6s infinite;
+  z-index:10;
+}
+
+@keyframes blink{
+  0%,100%{
+    opacity:.2;
+    transform:translateX(-50%) translateY(0);
+  }
+
+  50%{
+    opacity:.9;
+    transform:translateX(-50%) translateY(4px);
+  }
+}
 
   <section>
     <div class="intro">
