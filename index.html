@@ -222,54 +222,14 @@
       padding:46px 26px;
     }
 
-    .map-card{
-      max-width:620px;
-      margin:34px auto 26px;
-      padding:28px;
-      border-radius:24px;
-      background:linear-gradient(
-        135deg,
-        rgba(207,58,153,.20),
-        rgba(10,69,156,.16)
-      );
-      border:1px solid rgba(255,255,255,.10);
-      display:flex;
-      align-items:center;
-      gap:20px;
-      text-align:left;
-      box-shadow:0 24px 60px rgba(0,0,0,.22);
-    }
-
-    .map-icon{
-      width:64px;
-      height:64px;
-      min-width:64px;
-      border-radius:50%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      background:#cf3a99;
-      color:#fff;
-      font-size:34px;
-    }
-
-    .map-card-text strong{
-      display:block;
-      font-size:18px;
-      margin-bottom:4px;
-    }
-
-    .map-card-text span{
-      display:block;
-      color:#ddd;
-      font-size:15px;
-    }
-
-    .map-card-text small{
-      display:block;
-      margin-top:10px;
-      color:#cf3a99;
-      font-size:13px;
+    .map-frame{
+      width:100%;
+      height:320px;
+      border:none;
+      border-radius:22px;
+      margin-top:30px;
+      margin-bottom:26px;
+      filter:grayscale(100%) contrast(105%);
     }
 
     .map-button{
@@ -295,7 +255,6 @@
     }
 
     @media(max-width:700px){
-
       section{
         padding:90px 7%;
       }
@@ -312,11 +271,6 @@
       .gradient{
         width:240px;
         height:240px;
-      }
-
-      .map-card{
-        flex-direction:column;
-        text-align:center;
       }
     }
   </style>
@@ -468,33 +422,17 @@
 
         <p>경기 안양시 만안구 문예로36번길 16</p>
 
-        <div class="map-card">
-
-          <div class="map-icon">
-            ⌖
-          </div>
-
-          <div class="map-card-text">
-            <strong>안양아트센터 갤러리 미담</strong>
-
-            <span>
-              경기 안양시 만안구 문예로36번길 16
-            </span>
-
-            <small>
-              버튼을 누르면 네이버 지도 앱 또는 웹으로 연결됩니다.
-            </small>
-          </div>
-
-        </div>
+        <iframe
+          class="map-frame"
+          src="https://maps.google.com/maps?q=%EC%95%88%EC%96%91%EC%95%84%ED%8A%B8%EC%84%BC%ED%84%B0%20%EA%B0%A4%EB%9F%AC%EB%A6%AC%20%EB%AF%B8%EB%8B%B4&t=&z=15&ie=UTF8&iwloc=&output=embed"
+          loading="lazy">
+        </iframe>
 
         <a
           class="map-button"
           href="https://naver.me/GI3pp292"
           target="_blank">
-
           네이버 지도에서 길찾기
-
         </a>
 
       </div>
@@ -513,11 +451,9 @@
   </section>
 
   <script>
-
     const poster = document.querySelector('.poster');
 
     window.addEventListener('scroll', () => {
-
       const y = window.scrollY;
 
       poster.style.opacity =
@@ -525,9 +461,7 @@
 
       poster.style.transform =
         `scale(${Math.max(.92, 1 - y / 4000)})`;
-
     });
-
   </script>
 
 </body>
