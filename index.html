@@ -63,8 +63,15 @@
     }
 
     @keyframes blink{
-      0%,100%{opacity:.2; transform:translateX(-50%) translateY(0);}
-      50%{opacity:.9; transform:translateX(-50%) translateY(4px);}
+      0%,100%{
+        opacity:.2;
+        transform:translateX(-50%) translateY(0);
+      }
+
+      50%{
+        opacity:.9;
+        transform:translateX(-50%) translateY(4px);
+      }
     }
 
     .real-poster{
@@ -106,7 +113,6 @@
       margin:auto;
       color:#ddd;
       font-size:16px;
-      line-break:strict;
     }
 
     .part{
@@ -116,7 +122,6 @@
       display:flex;
       align-items:center;
       position:relative;
-      overflow:visible;
     }
 
     .part-text{
@@ -148,7 +153,6 @@
       font-size:16px;
       color:#ddd;
       max-width:680px;
-      line-break:strict;
     }
 
     .gradient{
@@ -197,6 +201,19 @@
       margin:8px 0;
     }
 
+    .day-block{
+      margin-top:6px;
+    }
+
+    .day-title{
+      display:inline-block;
+      margin-bottom:6px;
+      color:#cf3a99;
+      font-size:15px;
+      font-weight:700;
+      letter-spacing:2px;
+    }
+
     .location-box{
       margin-top:60px;
       background:rgba(255,255,255,.055);
@@ -205,13 +222,54 @@
       padding:46px 26px;
     }
 
-    .map-frame{
-      width:100%;
-      height:320px;
-      border:none;
-      border-radius:22px;
-      margin-top:30px;
-      margin-bottom:26px;
+    .map-card{
+      max-width:620px;
+      margin:34px auto 26px;
+      padding:28px;
+      border-radius:24px;
+      background:linear-gradient(
+        135deg,
+        rgba(207,58,153,.20),
+        rgba(10,69,156,.16)
+      );
+      border:1px solid rgba(255,255,255,.10);
+      display:flex;
+      align-items:center;
+      gap:20px;
+      text-align:left;
+      box-shadow:0 24px 60px rgba(0,0,0,.22);
+    }
+
+    .map-icon{
+      width:64px;
+      height:64px;
+      min-width:64px;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:#cf3a99;
+      color:#fff;
+      font-size:34px;
+    }
+
+    .map-card-text strong{
+      display:block;
+      font-size:18px;
+      margin-bottom:4px;
+    }
+
+    .map-card-text span{
+      display:block;
+      color:#ddd;
+      font-size:15px;
+    }
+
+    .map-card-text small{
+      display:block;
+      margin-top:10px;
+      color:#cf3a99;
+      font-size:13px;
     }
 
     .map-button{
@@ -237,6 +295,7 @@
     }
 
     @media(max-width:700px){
+
       section{
         padding:90px 7%;
       }
@@ -254,6 +313,11 @@
         width:240px;
         height:240px;
       }
+
+      .map-card{
+        flex-direction:column;
+        text-align:center;
+      }
     }
   </style>
 </head>
@@ -266,6 +330,7 @@
       <div class="scroll-text">
         SCROLL
       </div>
+
       <div class="poster">
         <img src="poster.jpg" class="real-poster" alt="UNVEIL 포스터">
       </div>
@@ -274,6 +339,7 @@
 
   <section>
     <div class="intro">
+
       <h2>UNVEIL</h2>
 
       <div class="quote">
@@ -286,35 +352,49 @@
       </div>
 
       <p>
-        불안한 청춘의 깊은 어둠과 그 안에서 스스로 빛을 만들어내는 우리의 시작을 담은,
+        불안한 청춘의 깊은 어둠과
+        그 안에서 스스로 빛을 만들어내는 우리의 시작을 담은,
         졸업이라는 경계의 순간.
       </p>
+
     </div>
   </section>
 
   <section>
     <div class="part">
+
       <div class="gradient gradient-pink"></div>
+
       <div class="part-text">
         <small>PART 1</small>
+
         <h3>LUMINOUS</h3>
+
         <h4>빛나는, 스스로 발광하는</h4>
+
         <p>
           심연 속에서조차 사라지지 않는 것이 있다.
           아주 작은 빛이지만, 빛나는 존재로서의 우리.
-          희망, 열정, 그리고 창작의 에너지는 어둠 속에서도 꺼지지 않고 길을 비춘다.
+          희망, 열정, 그리고 창작의 에너지는
+          어둠 속에서도 꺼지지 않고 길을 비춘다.
         </p>
       </div>
+
     </div>
   </section>
 
   <section>
     <div class="part">
+
       <div class="gradient gradient-blue"></div>
+
       <div class="part-text">
         <small>PART 2</small>
+
         <h3>ABYSS</h3>
+
         <h4>심연</h4>
+
         <p>
           하지만 그 꿈의 이면에는 끝을 알 수 없는 심연이 있다.
           불안, 좌절, 비교, 흔들림...
@@ -322,16 +402,22 @@
           우리는 스스로의 내면 가장 깊은 곳과 마주하게 된다.
         </p>
       </div>
+
     </div>
   </section>
 
   <section>
     <div class="part">
+
       <div class="gradient gradient-purple"></div>
+
       <div class="part-text">
         <small>PART 3</small>
+
         <h3>DREAMING</h3>
+
         <h4>꿈꾸는 중</h4>
+
         <p>
           우리는 아직 완성되지 않은 존재로,
           끊임없이 꿈을 꾸는 중이다.
@@ -339,57 +425,109 @@
           각자의 이상과 가능성은 마음속에서 계속해서 자라난다.
         </p>
       </div>
+
     </div>
   </section>
 
   <section>
     <div class="info">
-      <h2>EXHIBITION INFO</h2>
+
+      <h2>SCHEDULE & LOCATION</h2>
 
       <div class="schedule">
+
         <p><strong>안양아트센터 갤러리 미담</strong></p>
         <p>2026. 10. 23 - 25</p>
+
         <br>
-        <p> DAY 1 - 10. 23 &nbsp; 15:00 - 18:00</p>
-        <p> DAY 2 - 10. 24 &nbsp; 09:00 - 18:00</p>
-        <p> DAY 3 - 10. 25 &nbsp; 09:00 - 15:00</p>
+
+        <div class="day-block">
+          <span class="day-title">DAY 1</span>
+          <p>10. 23 &nbsp; 15:00 - 18:00</p>
+        </div>
+
+        <br>
+
+        <div class="day-block">
+          <span class="day-title">DAY 2</span>
+          <p>10. 24 &nbsp; 09:00 - 18:00</p>
+        </div>
+
+        <br>
+
+        <div class="day-block">
+          <span class="day-title">DAY 3</span>
+          <p>10. 25 &nbsp; 09:00 - 15:00</p>
+        </div>
+
       </div>
 
       <div class="location-box">
+
         <h3>안양아트센터 갤러리 미담</h3>
+
         <p>경기 안양시 만안구 문예로36번길 16</p>
 
-        <iframe
-          class="map-frame"
-          src="https://maps.google.com/maps?q=%EC%95%88%EC%96%91%EC%95%84%ED%8A%B8%EC%84%BC%ED%84%B0&t=&z=15&ie=UTF8&iwloc=&output=embed"
-          loading="lazy">
-        </iframe>
+        <div class="map-card">
+
+          <div class="map-icon">
+            ⌖
+          </div>
+
+          <div class="map-card-text">
+            <strong>안양아트센터 갤러리 미담</strong>
+
+            <span>
+              경기 안양시 만안구 문예로36번길 16
+            </span>
+
+            <small>
+              버튼을 누르면 네이버 지도 앱 또는 웹으로 연결됩니다.
+            </small>
+          </div>
+
+        </div>
 
         <a
           class="map-button"
           href="https://naver.me/GI3pp292"
           target="_blank">
+
           네이버 지도에서 길찾기
+
         </a>
+
       </div>
+
     </div>
   </section>
 
   <section class="video-section">
+
     <h2>OUR STORY</h2>
+
     <div class="video-box">
       VIDEO COMING SOON
     </div>
+
   </section>
 
   <script>
+
     const poster = document.querySelector('.poster');
 
     window.addEventListener('scroll', () => {
+
       const y = window.scrollY;
-      poster.style.opacity = Math.max(0, 1 - y / 600);
-      poster.style.transform = `scale(${Math.max(.92, 1 - y / 4000)})`;
+
+      poster.style.opacity =
+        Math.max(0, 1 - y / 600);
+
+      poster.style.transform =
+        `scale(${Math.max(.92, 1 - y / 4000)})`;
+
     });
+
   </script>
 
 </body>
