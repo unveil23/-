@@ -90,6 +90,46 @@
       text-align:center;
     }
 
+    .intro-section{
+      position:relative;
+      overflow:hidden;
+    }
+
+    .intro-section::before{
+      content:"";
+      position:absolute;
+      left:50%;
+      top:50%;
+      width:520px;
+      height:520px;
+      transform:translate(-50%,-50%);
+      border-radius:50%;
+      background:radial-gradient(circle, rgba(207,58,153,.18), rgba(10,69,156,.12), transparent 68%);
+      filter:blur(45px);
+      opacity:.85;
+      pointer-events:none;
+    }
+.intro{
+      position:relative;
+      z-index:2;
+    }
+
+    .fade-up{
+      opacity:0;
+      transform:translateY(24px);
+      transition:opacity .9s ease, transform .9s ease;
+    }
+
+    .intro-section.show .fade-up{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    .delay-1{transition-delay:.1s;}
+    .delay-2{transition-delay:.3s;}
+    .delay-3{transition-delay:.5s;}
+    .delay-4{transition-delay:.7s;}
+
     .intro h2{
       font-size:clamp(44px,8vw,92px);
       letter-spacing:10px;
@@ -353,21 +393,21 @@
     </div>
   </section>
 
-  <section>
+  <section class="intro-section">
     <div class="intro">
 
-      <h2>UNVEIL</h2>
+      <h2 class="fade-up delay-1">UNVEIL</h2>
 
-      <div class="quote">
+      <div class="quote fade-up delay-2">
         DREAMING in the ABYSS,<br>
         yet still LUMINOUS
       </div>
 
-      <div class="quote-sub">
+      <div class="quote-sub fade-up delay-3">
         심연 속에서 꿈꾸며, 그럼에도 빛나는 우리에 대한 기록
       </div>
 
-      <p>
+      <p class="fade-up delay-4">
         불안한 청춘의 깊은 어둠과
         그 안에서 스스로 빛을 만들어내는 우리의 시작을 담은,
         졸업이라는 경계의 순간.
@@ -516,6 +556,20 @@
   </section>
 
   <script>
+    const introSection = document.querySelector('.intro-section');
+
+    const introObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          introSection.classList.add('show');
+        }
+      });
+    }, { threshold: 0.35 });
+
+    if(introSection){
+      introObserver.observe(introSection);
+    }
+
     const poster = document.querySelector('.poster');
 
     window.addEventListener('scroll', () => {
