@@ -196,22 +196,76 @@
       margin-bottom:50px;
     }
 
-    .schedule p{
+    .schedule{
+      max-width:760px;
+      margin:0 auto;
+    }
+
+    .schedule-main{
+      margin-bottom:38px;
+    }
+
+    .schedule-main p{
       font-size:18px;
       margin:8px 0;
     }
 
-    .day-block{
-      margin-top:6px;
+    .schedule-cards{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:18px;
+      margin-top:32px;
+    }
+
+    .day-card{
+      position:relative;
+      padding:28px 18px;
+      border-radius:22px;
+      background:rgba(255,255,255,.055);
+      border:1px solid rgba(255,255,255,.09);
+      box-shadow:0 20px 50px rgba(0,0,0,.18);
+      overflow:hidden;
+    }
+
+    .day-card::before{
+      content:"";
+      position:absolute;
+      width:110px;
+      height:110px;
+      border-radius:50%;
+      background:radial-gradient(circle, rgba(207,58,153,.32), rgba(207,58,153,0) 70%);
+      right:-42px;
+      top:-42px;
+      filter:blur(8px);
     }
 
     .day-title{
-      display:inline-block;
-      margin-bottom:6px;
+      display:block;
       color:#cf3a99;
-      font-size:15px;
-      font-weight:700;
+      font-size:14px;
+      font-weight:800;
       letter-spacing:2px;
+      margin-bottom:14px;
+      position:relative;
+      z-index:2;
+    }
+
+    .day-date{
+      display:block;
+      font-size:22px;
+      font-weight:800;
+      color:#fff;
+      margin-bottom:8px;
+      position:relative;
+      z-index:2;
+    }
+
+    .day-time{
+      display:block;
+      color:#ddd;
+      font-size:15px;
+      position:relative;
+      z-index:2;
     }
 
     .location-box{
@@ -271,6 +325,14 @@
       .gradient{
         width:240px;
         height:240px;
+      }
+
+      .schedule-cards{
+        grid-template-columns:1fr;
+      }
+
+      .day-card{
+        padding:24px 18px;
       }
     }
   </style>
@@ -390,28 +452,31 @@
 
       <div class="schedule">
 
-        <p><strong>안양아트센터 갤러리 미담</strong></p>
-        <p>2026. 10. 23 - 25</p>
-
-        <br>
-
-        <div class="day-block">
-          <span class="day-title">DAY 1</span>
-          <p>10. 23 &nbsp; 15:00 - 18:00</p>
+        <div class="schedule-main">
+          <p><strong>안양아트센터 갤러리 미담</strong></p>
+          <p>2026. 10. 23 - 25</p>
         </div>
 
-        <br>
+        <div class="schedule-cards">
 
-        <div class="day-block">
-          <span class="day-title">DAY 2</span>
-          <p>10. 24 &nbsp; 09:00 - 18:00</p>
-        </div>
+          <div class="day-card">
+            <span class="day-title">DAY 1</span>
+            <span class="day-date">10. 23</span>
+            <span class="day-time">15:00 - 18:00</span>
+          </div>
 
-        <br>
+          <div class="day-card">
+            <span class="day-title">DAY 2</span>
+            <span class="day-date">10. 24</span>
+            <span class="day-time">09:00 - 18:00</span>
+          </div>
 
-        <div class="day-block">
-          <span class="day-title">DAY 3</span>
-          <p>10. 25 &nbsp; 09:00 - 15:00</p>
+          <div class="day-card">
+            <span class="day-title">DAY 3</span>
+            <span class="day-date">10. 25</span>
+            <span class="day-time">09:00 - 15:00</span>
+          </div>
+
         </div>
 
       </div>
