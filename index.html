@@ -28,8 +28,6 @@
       padding:120px 8%;
     }
 
-    /* poster */
-
     .poster-section{
       height:130vh;
       padding:0;
@@ -84,8 +82,6 @@
         transform:translateX(-50%) translateY(4px);
       }
     }
-
-    /* intro */
 
     .intro-section{
       position:relative;
@@ -144,25 +140,15 @@
     .delay-3{transition-delay:.5s;}
     .delay-4{transition-delay:.7s;}
 
-    /* part */
-
     .part{
-      max-width:960px;
+      max-width:760px;
       margin:auto;
       min-height:58vh;
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:70px;
-      align-items:center;
+      display:block;
     }
 
-    .part.reverse{
-      direction:rtl;
-    }
-
-    .part.reverse .part-text,
-    .part.reverse .keyword-image{
-      direction:ltr;
+    .part + .part{
+      margin-top:120px;
     }
 
     .part-text small{
@@ -191,18 +177,15 @@
       max-width:680px;
     }
 
-    /* image */
-
     .keyword-image{
       width:100%;
-      aspect-ratio:4/5;
-
+      max-width:420px;
+      aspect-ratio:4/3;
+      margin:0 0 42px 0;
       background:none;
       border:none;
       border-radius:0;
-
       overflow:hidden;
-
       display:flex;
       align-items:center;
       justify-content:center;
@@ -213,12 +196,9 @@
       height:100%;
       object-fit:cover;
       display:block;
-
       opacity:.92;
       filter:brightness(.9) contrast(1.05);
     }
-
-    /* schedule */
 
     .info{
       max-width:1000px;
@@ -278,8 +258,6 @@
       color:#dddddd;
     }
 
-    /* map */
-
     .location-box{
       margin-top:70px;
       background:rgba(255,255,255,.03);
@@ -322,8 +300,6 @@
       font-weight:800;
     }
 
-    /* video */
-
     .video-section{
       max-width:1000px;
       margin:auto;
@@ -347,8 +323,6 @@
       font-size:20px;
     }
 
-    /* mobile */
-
     @media(max-width:700px){
 
       section{
@@ -359,14 +333,8 @@
         width:92vw;
       }
 
-      .part,
-      .part.reverse{
-        grid-template-columns:1fr;
-        gap:34px;
-        direction:ltr;
-      }
-
       .keyword-image{
+        max-width:100%;
         aspect-ratio:16/10;
       }
 
@@ -381,10 +349,7 @@
 
 <body>
 
-  <!-- poster -->
-
   <section class="poster-section">
-
     <div class="poster-wrap">
 
       <div class="scroll-text">
@@ -396,13 +361,9 @@
       </div>
 
     </div>
-
   </section>
 
-  <!-- intro -->
-
   <section class="intro-section">
-
     <div class="intro">
 
       <h2 class="fade-up delay-1">
@@ -410,24 +371,19 @@
       </h2>
 
       <div class="quote fade-up delay-2">
-
         <span class="pink">DREAMING</span>
         in the
         <span class="pink">ABYSS</span>,<br>
-
         yet still
         <span class="pink">LUMINOUS</span>
-
       </div>
 
       <div class="quote-sub fade-up delay-3">
-
         <span class="pink">심연</span> 속에서
         <span class="pink">꿈꾸며</span>,
         그럼에도
         <span class="pink">빛나는</span>
         우리에 대한 기록
-
       </div>
 
       <p class="fade-up delay-4">
@@ -437,20 +393,15 @@
       </p>
 
     </div>
-
   </section>
 
-  <!-- part 1 -->
-
   <section>
-
     <div class="part">
-
-      <div class="keyword-image">
-        <img src="luminous.png" alt="LUMINOUS 이미지">
-      </div>
-
       <div class="part-text">
+
+        <div class="keyword-image">
+          <img src="luminous.png" alt="LUMINOUS 이미지">
+        </div>
 
         <small>PART 1</small>
 
@@ -466,22 +417,16 @@
         </p>
 
       </div>
-
     </div>
-
   </section>
 
-  <!-- part 2 -->
-
   <section>
-
-    <div class="part reverse">
-
-      <div class="keyword-image">
-        <img src="abyss.png" alt="ABYSS 이미지">
-      </div>
-
+    <div class="part">
       <div class="part-text">
+
+        <div class="keyword-image">
+          <img src="abyss.png" alt="ABYSS 이미지">
+        </div>
 
         <small>PART 2</small>
 
@@ -497,22 +442,16 @@
         </p>
 
       </div>
-
     </div>
-
   </section>
 
-  <!-- part 3 -->
-
   <section>
-
     <div class="part">
-
-      <div class="keyword-image">
-        <img src="dreaming.png" alt="DREAMING 이미지">
-      </div>
-
       <div class="part-text">
+
+        <div class="keyword-image">
+          <img src="dreaming.png" alt="DREAMING 이미지">
+        </div>
 
         <small>PART 3</small>
 
@@ -528,15 +467,10 @@
         </p>
 
       </div>
-
     </div>
-
   </section>
 
-  <!-- schedule -->
-
   <section>
-
     <div class="info">
 
       <h2>SCHEDULE</h2>
@@ -544,51 +478,40 @@
       <div class="schedule">
 
         <div class="schedule-main">
-
           <p><strong>안양아트센터 갤러리 미담</strong></p>
           <p>2026. 10. 23 - 25</p>
-
         </div>
 
         <div class="time-row">
-
           <span class="day-title">DAY 1</span>
 
           <div class="day-detail">
             <span>10. 23</span>
             <span>15:00 - 18:00</span>
           </div>
-
         </div>
 
         <div class="time-row">
-
           <span class="day-title">DAY 2</span>
 
           <div class="day-detail">
             <span>10. 24</span>
             <span>09:00 - 18:00</span>
           </div>
-
         </div>
 
         <div class="time-row">
-
           <span class="day-title">DAY 3</span>
 
           <div class="day-detail">
             <span>10. 25</span>
             <span>09:00 - 15:00</span>
           </div>
-
         </div>
 
       </div>
 
-      <!-- location -->
-
       <div class="location-box">
-
         <h3>안양아트센터 갤러리 미담</h3>
 
         <p>
@@ -613,27 +536,20 @@
           class="map-button"
           href="https://naver.me/GI3pp292"
           target="_blank">
-
           네이버 지도에서 길찾기
-
         </a>
 
       </div>
 
     </div>
-
   </section>
 
-  <!-- video -->
-
   <section class="video-section">
-
     <h2>BEHIND THE SCENES</h2>
 
     <div class="video-box">
       VIDEO COMING SOON
     </div>
-
   </section>
 
   <script>
