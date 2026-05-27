@@ -6,6 +6,7 @@
   <title>UNVEIL Graduation Exhibition</title>
 
   <style>
+
     *{
       margin:0;
       padding:0;
@@ -14,8 +15,8 @@
 
     body{
       font-family:Arial, 'Noto Sans KR', sans-serif;
-      background:#211f1d;
-      color:#f5f2ee;
+      background:#000000;
+      color:#ffffff;
       overflow-x:hidden;
       line-height:1.8;
       word-break:keep-all;
@@ -27,10 +28,12 @@
       padding:120px 8%;
     }
 
+    /* poster */
+
     .poster-section{
       height:130vh;
       padding:0;
-      background:#211f1d;
+      background:#000000;
     }
 
     .poster-wrap{
@@ -40,13 +43,21 @@
       display:flex;
       align-items:center;
       justify-content:center;
-      background:#211f1d;
+      background:#000000;
     }
 
     .poster{
       width:min(88vw, 560px);
       aspect-ratio:7/10;
       transition:opacity .2s linear, transform .2s linear;
+    }
+
+    .real-poster{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      display:block;
+      box-shadow:0 30px 80px rgba(0,0,0,.45);
     }
 
     .scroll-text{
@@ -74,62 +85,18 @@
       }
     }
 
-    .real-poster{
-      width:100%;
-      height:100%;
-      object-fit:contain;
-      display:block;
-      box-shadow:0 30px 80px rgba(0,0,0,.35);
-    }
-
-    .intro,
-    .info,
-    .video-section{
-      max-width:1000px;
-      margin:auto;
-      text-align:center;
-    }
+    /* intro */
 
     .intro-section{
       position:relative;
       overflow:hidden;
     }
 
-    .intro-section::before{
-      content:"";
-      position:absolute;
-      left:50%;
-      top:50%;
-      width:520px;
-      height:520px;
-      transform:translate(-50%,-50%);
-      border-radius:50%;
-      background:radial-gradient(circle, rgba(255,255,255,.035), transparent 68%);
-      filter:blur(45px);
-      opacity:.8;
-      pointer-events:none;
-    }
-
     .intro{
-      position:relative;
-      z-index:2;
+      max-width:1000px;
+      margin:auto;
+      text-align:center;
     }
-
-    .fade-up{
-      opacity:0;
-      transform:translateY(24px);
-      transition:opacity .9s ease, transform .9s ease;
-    }
-
-    .intro-section.show .fade-up{
-      opacity:1;
-      transform:translateY(0);
-    }
-
-    .delay-1{transition-delay:.1s;}
-    .delay-2{transition-delay:.3s;}
-    .delay-3{transition-delay:.5s;}
-    .delay-4{transition-delay:.7s;}
 
     .intro h2{
       font-size:clamp(44px,8vw,92px);
@@ -152,9 +119,27 @@
     .intro p{
       max-width:780px;
       margin:auto;
-      color:#ddd;
+      color:#dddddd;
       font-size:16px;
     }
+
+    .fade-up{
+      opacity:0;
+      transform:translateY(24px);
+      transition:opacity .9s ease, transform .9s ease;
+    }
+
+    .intro-section.show .fade-up{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    .delay-1{transition-delay:.1s;}
+    .delay-2{transition-delay:.3s;}
+    .delay-3{transition-delay:.5s;}
+    .delay-4{transition-delay:.7s;}
+
+    /* part */
 
     .part{
       max-width:960px;
@@ -164,21 +149,15 @@
       grid-template-columns:1fr 1fr;
       gap:70px;
       align-items:center;
-      position:relative;
     }
 
-    .part:nth-child(even){
+    .part.reverse{
       direction:rtl;
     }
 
-    .part:nth-child(even) .part-text,
-    .part:nth-child(even) .keyword-image{
+    .part.reverse .part-text,
+    .part.reverse .keyword-image{
       direction:ltr;
-    }
-
-    .part-text{
-      position:relative;
-      z-index:2;
     }
 
     .part-text small{
@@ -191,7 +170,7 @@
       font-size:clamp(42px,7vw,82px);
       line-height:1.1;
       margin:12px 0;
-      color:#fff;
+      color:#ffffff;
     }
 
     .part-text h4{
@@ -203,21 +182,23 @@
 
     .part-text p{
       font-size:16px;
-      color:#ddd;
+      color:#dddddd;
       max-width:680px;
     }
+
+    /* image */
 
     .keyword-image{
       width:100%;
       aspect-ratio:4/5;
       border-radius:28px;
       overflow:hidden;
-      background:rgba(255,255,255,.055);
-      border:1px solid rgba(255,255,255,.08);
+      background:rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.06);
       display:flex;
       align-items:center;
       justify-content:center;
-      color:rgba(255,255,255,.45);
+      color:rgba(255,255,255,.4);
       font-size:14px;
       letter-spacing:2px;
     }
@@ -229,19 +210,28 @@
       display:block;
     }
 
-    .info h2,
-    .video-section h2{
+    /* schedule */
+
+    .info{
+      max-width:1000px;
+      margin:auto;
+      text-align:center;
+    }
+
+    .info h2{
       font-size:clamp(34px,6vw,68px);
       margin-bottom:50px;
     }
 
     .schedule{
-      max-width:760px;
+      max-width:520px;
       margin:0 auto;
+      text-align:left;
     }
 
     .schedule-main{
-      margin-bottom:46px;
+      text-align:center;
+      margin-bottom:50px;
     }
 
     .schedule-main p{
@@ -249,19 +239,13 @@
       margin:8px 0;
     }
 
-    .timetable{
-      max-width:520px;
-      margin:0 auto;
-      text-align:left;
-    }
-
     .time-row{
-      padding:26px 0;
-      border-top:1px solid rgba(255,255,255,.14);
+      padding:28px 0;
+      border-top:1px solid rgba(255,255,255,.12);
     }
 
     .time-row:last-child{
-      border-bottom:1px solid rgba(255,255,255,.14);
+      border-bottom:1px solid rgba(255,255,255,.12);
     }
 
     .day-title{
@@ -278,18 +262,20 @@
       display:flex;
       justify-content:space-between;
       gap:24px;
-      color:#f5f2ee;
+      color:#ffffff;
       font-size:18px;
     }
 
     .day-detail span:last-child{
-      color:#ddd;
+      color:#dddddd;
     }
+
+    /* map */
 
     .location-box{
       margin-top:70px;
-      background:rgba(255,255,255,.055);
-      border:1px solid rgba(255,255,255,.08);
+      background:rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.06);
       border-radius:24px;
       padding:46px 26px;
     }
@@ -303,7 +289,7 @@
     }
 
     .way-text{
-      color:#ddd;
+      color:#dddddd;
       font-size:15px;
       margin-top:8px;
     }
@@ -322,24 +308,41 @@
       margin-top:8px;
       padding:14px 34px;
       border-radius:999px;
-      background:#f5f2ee;
-      color:#211f1d;
+      background:#ffffff;
+      color:#000000;
       text-decoration:none;
       font-weight:800;
+    }
+
+    /* video */
+
+    .video-section{
+      max-width:1000px;
+      margin:auto;
+      text-align:center;
+    }
+
+    .video-section h2{
+      font-size:clamp(34px,6vw,68px);
+      margin-bottom:50px;
     }
 
     .video-box{
       height:360px;
       border-radius:28px;
-      background:rgba(255,255,255,.055);
+      background:rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.06);
       display:flex;
       align-items:center;
       justify-content:center;
-      color:#aaa;
+      color:#888888;
       font-size:20px;
     }
 
+    /* mobile */
+
     @media(max-width:700px){
+
       section{
         padding:90px 7%;
       }
@@ -349,11 +352,9 @@
       }
 
       .part,
-      .part:nth-child(even){
+      .part.reverse{
         grid-template-columns:1fr;
         gap:34px;
-        min-height:auto;
-        padding:50px 0;
         direction:ltr;
       }
 
@@ -364,13 +365,18 @@
       .day-detail{
         display:block;
       }
+
     }
+
   </style>
 </head>
 
 <body>
 
+  <!-- poster -->
+
   <section class="poster-section">
+
     <div class="poster-wrap">
 
       <div class="scroll-text">
@@ -380,13 +386,20 @@
       <div class="poster">
         <img src="poster.jpg" class="real-poster" alt="UNVEIL 포스터">
       </div>
+
     </div>
+
   </section>
 
+  <!-- intro -->
+
   <section class="intro-section">
+
     <div class="intro">
 
-      <h2 class="fade-up delay-1">UNVEIL</h2>
+      <h2 class="fade-up delay-1">
+        UNVEIL
+      </h2>
 
       <div class="quote fade-up delay-2">
         DREAMING in the ABYSS,<br>
@@ -404,9 +417,13 @@
       </p>
 
     </div>
+
   </section>
 
+  <!-- part 1 -->
+
   <section>
+
     <div class="part">
 
       <div class="keyword-image">
@@ -414,6 +431,7 @@
       </div>
 
       <div class="part-text">
+
         <small>PART 1</small>
 
         <h3>LUMINOUS</h3>
@@ -426,19 +444,25 @@
           희망, 열정, 그리고 창작의 에너지는
           어둠 속에서도 꺼지지 않고 길을 비춘다.
         </p>
+
       </div>
 
     </div>
+
   </section>
 
+  <!-- part 2 -->
+
   <section>
-    <div class="part">
+
+    <div class="part reverse">
 
       <div class="keyword-image">
         <img src="abyss.jpg" alt="ABYSS 이미지">
       </div>
 
       <div class="part-text">
+
         <small>PART 2</small>
 
         <h3>ABYSS</h3>
@@ -451,12 +475,17 @@
           깊고 어두운 감정들이 우리를 삼키려 할 때,
           우리는 스스로의 내면 가장 깊은 곳과 마주하게 된다.
         </p>
+
       </div>
 
     </div>
+
   </section>
 
+  <!-- part 3 -->
+
   <section>
+
     <div class="part">
 
       <div class="keyword-image">
@@ -464,6 +493,7 @@
       </div>
 
       <div class="part-text">
+
         <small>PART 3</small>
 
         <h3>DREAMING</h3>
@@ -476,12 +506,17 @@
           불확실한 미래와 두려움 속에서도 상상은 멈추지 않고,
           각자의 이상과 가능성은 마음속에서 계속해서 자라난다.
         </p>
+
       </div>
 
     </div>
+
   </section>
 
+  <!-- schedule -->
+
   <section>
+
     <div class="info">
 
       <h2>SCHEDULE</h2>
@@ -489,48 +524,64 @@
       <div class="schedule">
 
         <div class="schedule-main">
+
           <p><strong>안양아트센터 갤러리 미담</strong></p>
           <p>2026. 10. 23 - 25</p>
+
         </div>
 
-        <div class="timetable">
+        <div class="time-row">
 
-          <div class="time-row">
-            <span class="day-title">DAY 1</span>
-            <div class="day-detail">
-              <span>10. 23</span>
-              <span>15:00 - 18:00</span>
-            </div>
+          <span class="day-title">DAY 1</span>
+
+          <div class="day-detail">
+            <span>10. 23</span>
+            <span>15:00 - 18:00</span>
           </div>
 
-          <div class="time-row">
-            <span class="day-title">DAY 2</span>
-            <div class="day-detail">
-              <span>10. 24</span>
-              <span>09:00 - 18:00</span>
-            </div>
+        </div>
+
+        <div class="time-row">
+
+          <span class="day-title">DAY 2</span>
+
+          <div class="day-detail">
+            <span>10. 24</span>
+            <span>09:00 - 18:00</span>
           </div>
 
-          <div class="time-row">
-            <span class="day-title">DAY 3</span>
-            <div class="day-detail">
-              <span>10. 25</span>
-              <span>09:00 - 15:00</span>
-            </div>
+        </div>
+
+        <div class="time-row">
+
+          <span class="day-title">DAY 3</span>
+
+          <div class="day-detail">
+            <span>10. 25</span>
+            <span>09:00 - 15:00</span>
           </div>
 
         </div>
 
       </div>
 
+      <!-- location -->
+
       <div class="location-box">
 
         <h3>안양아트센터 갤러리 미담</h3>
 
-        <p>경기 안양시 만안구 문예로36번길 16</p>
+        <p>
+          경기 안양시 만안구 문예로36번길 16
+        </p>
 
-        <div class="way-title">DIRECTIONS</div>
-        <p class="way-text">지도를 통해 전시장 위치와 오시는 길을 확인하실 수 있습니다.</p>
+        <div class="way-title">
+          DIRECTIONS
+        </div>
+
+        <p class="way-text">
+          지도를 통해 전시장 위치와 오시는 길을 확인하실 수 있습니다.
+        </p>
 
         <iframe
           class="map-frame"
@@ -542,17 +593,22 @@
           class="map-button"
           href="https://naver.me/GI3pp292"
           target="_blank">
+
           네이버 지도에서 길찾기
+
         </a>
 
       </div>
 
     </div>
+
   </section>
+
+  <!-- video -->
 
   <section class="video-section">
 
-    <h2>BEHIND THE VEIL</h2>
+    <h2>BEHIND STORIES</h2>
 
     <div class="video-box">
       VIDEO COMING SOON
@@ -561,23 +617,32 @@
   </section>
 
   <script>
-    const introSection = document.querySelector('.intro-section');
 
-    const introObserver = new IntersectionObserver((entries) => {
+    const introSection =
+      document.querySelector('.intro-section');
+
+    const introObserver =
+      new IntersectionObserver((entries) => {
+
       entries.forEach(entry => {
+
         if(entry.isIntersecting){
           introSection.classList.add('show');
         }
+
       });
+
     }, { threshold: 0.35 });
 
     if(introSection){
       introObserver.observe(introSection);
     }
 
-    const poster = document.querySelector('.poster');
+    const poster =
+      document.querySelector('.poster');
 
     window.addEventListener('scroll', () => {
+
       const y = window.scrollY;
 
       poster.style.opacity =
@@ -585,7 +650,9 @@
 
       poster.style.transform =
         `scale(${Math.max(.92, 1 - y / 4000)})`;
+
     });
+
   </script>
 
 </body>
