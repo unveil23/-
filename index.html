@@ -104,12 +104,13 @@
       height:520px;
       transform:translate(-50%,-50%);
       border-radius:50%;
-      background:radial-gradient(circle, rgba(207,58,153,.18), rgba(10,69,156,.12), transparent 68%);
+      background:radial-gradient(circle, rgba(255,255,255,.035), transparent 68%);
       filter:blur(45px);
-      opacity:.85;
+      opacity:.8;
       pointer-events:none;
     }
-.intro{
+
+    .intro{
       position:relative;
       z-index:2;
     }
@@ -132,7 +133,7 @@
 
     .intro h2{
       font-size:clamp(44px,8vw,92px);
-      letter-spacing:10px;
+      letter-spacing:3px;
       margin-bottom:40px;
     }
 
@@ -156,12 +157,23 @@
     }
 
     .part{
-      max-width:900px;
+      max-width:960px;
       margin:auto;
-      min-height:52vh;
-      display:flex;
+      min-height:58vh;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:70px;
       align-items:center;
       position:relative;
+    }
+
+    .part:nth-child(even){
+      direction:rtl;
+    }
+
+    .part:nth-child(even) .part-text,
+    .part:nth-child(even) .keyword-image{
+      direction:ltr;
     }
 
     .part-text{
@@ -195,39 +207,26 @@
       max-width:680px;
     }
 
-    .gradient{
-      position:absolute;
-      width:320px;
-      height:320px;
-      border-radius:50%;
-      opacity:.42;
-      left:50%;
-      top:50%;
-      transform:translate(-50%,-50%);
-      z-index:1;
-      filter:blur(48px);
-      pointer-events:none;
+    .keyword-image{
+      width:100%;
+      aspect-ratio:4/5;
+      border-radius:28px;
+      overflow:hidden;
+      background:rgba(255,255,255,.055);
+      border:1px solid rgba(255,255,255,.08);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:rgba(255,255,255,.45);
+      font-size:14px;
+      letter-spacing:2px;
     }
 
-    .gradient-pink{
-      background:radial-gradient(circle,
-      rgba(207,58,153,.95) 0%,
-      rgba(207,58,153,.82) 35%,
-      rgba(207,58,153,0) 72%);
-    }
-
-    .gradient-blue{
-      background:radial-gradient(circle,
-      rgba(10,69,156,.95) 0%,
-      rgba(10,69,156,.8) 35%,
-      rgba(10,69,156,0) 72%);
-    }
-
-    .gradient-purple{
-      background:radial-gradient(circle,
-      rgba(124,77,255,.95) 0%,
-      rgba(124,77,255,.82) 35%,
-      rgba(124,77,255,0) 72%);
+    .keyword-image img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
     }
 
     .info h2,
@@ -242,7 +241,7 @@
     }
 
     .schedule-main{
-      margin-bottom:38px;
+      margin-bottom:46px;
     }
 
     .schedule-main p{
@@ -250,70 +249,63 @@
       margin:8px 0;
     }
 
-    .schedule-cards{
-      display:grid;
-      grid-template-columns:repeat(3, 1fr);
-      gap:18px;
-      margin-top:32px;
+    .timetable{
+      max-width:520px;
+      margin:0 auto;
+      text-align:left;
     }
 
-    .day-card{
-      position:relative;
-      padding:28px 18px;
-      border-radius:22px;
-      background:rgba(255,255,255,.055);
-      border:1px solid rgba(255,255,255,.09);
-      box-shadow:0 20px 50px rgba(0,0,0,.18);
-      overflow:hidden;
+    .time-row{
+      padding:26px 0;
+      border-top:1px solid rgba(255,255,255,.14);
     }
 
-    .day-card::before{
-      content:"";
-      position:absolute;
-      width:110px;
-      height:110px;
-      border-radius:50%;
-      background:radial-gradient(circle, rgba(207,58,153,.32), rgba(207,58,153,0) 70%);
-      right:-42px;
-      top:-42px;
-      filter:blur(8px);
+    .time-row:last-child{
+      border-bottom:1px solid rgba(255,255,255,.14);
     }
 
     .day-title{
       display:block;
       color:#cf3a99;
-      font-size:14px;
+      font-size:clamp(30px,5vw,54px);
       font-weight:800;
       letter-spacing:2px;
-      margin-bottom:14px;
-      position:relative;
-      z-index:2;
+      line-height:1;
+      margin-bottom:12px;
     }
 
-    .day-date{
-      display:block;
-      font-size:22px;
-      font-weight:800;
-      color:#fff;
-      margin-bottom:8px;
-      position:relative;
-      z-index:2;
+    .day-detail{
+      display:flex;
+      justify-content:space-between;
+      gap:24px;
+      color:#f5f2ee;
+      font-size:18px;
     }
 
-    .day-time{
-      display:block;
+    .day-detail span:last-child{
       color:#ddd;
-      font-size:15px;
-      position:relative;
-      z-index:2;
     }
 
     .location-box{
-      margin-top:60px;
+      margin-top:70px;
       background:rgba(255,255,255,.055);
       border:1px solid rgba(255,255,255,.08);
       border-radius:24px;
       padding:46px 26px;
+    }
+
+    .way-title{
+      margin-top:34px;
+      color:#cf3a99;
+      font-size:15px;
+      font-weight:800;
+      letter-spacing:2px;
+    }
+
+    .way-text{
+      color:#ddd;
+      font-size:15px;
+      margin-top:8px;
     }
 
     .map-frame{
@@ -321,9 +313,8 @@
       height:320px;
       border:none;
       border-radius:22px;
-      margin-top:30px;
+      margin-top:28px;
       margin-bottom:26px;
-      filter:grayscale(100%) contrast(105%);
     }
 
     .map-button{
@@ -357,22 +348,21 @@
         width:92vw;
       }
 
-      .part{
+      .part,
+      .part:nth-child(even){
+        grid-template-columns:1fr;
+        gap:34px;
         min-height:auto;
         padding:50px 0;
+        direction:ltr;
       }
 
-      .gradient{
-        width:240px;
-        height:240px;
+      .keyword-image{
+        aspect-ratio:16/10;
       }
 
-      .schedule-cards{
-        grid-template-columns:1fr;
-      }
-
-      .day-card{
-        padding:24px 18px;
+      .day-detail{
+        display:block;
       }
     }
   </style>
@@ -419,7 +409,9 @@
   <section>
     <div class="part">
 
-      <div class="gradient gradient-pink"></div>
+      <div class="keyword-image">
+        <img src="luminous.jpg" alt="LUMINOUS 이미지">
+      </div>
 
       <div class="part-text">
         <small>PART 1</small>
@@ -442,7 +434,9 @@
   <section>
     <div class="part">
 
-      <div class="gradient gradient-blue"></div>
+      <div class="keyword-image">
+        <img src="abyss.jpg" alt="ABYSS 이미지">
+      </div>
 
       <div class="part-text">
         <small>PART 2</small>
@@ -465,7 +459,9 @@
   <section>
     <div class="part">
 
-      <div class="gradient gradient-purple"></div>
+      <div class="keyword-image">
+        <img src="dreaming.jpg" alt="DREAMING 이미지">
+      </div>
 
       <div class="part-text">
         <small>PART 3</small>
@@ -488,7 +484,7 @@
   <section>
     <div class="info">
 
-      <h2>SCHEDULE & LOCATION</h2>
+      <h2>SCHEDULE</h2>
 
       <div class="schedule">
 
@@ -497,24 +493,30 @@
           <p>2026. 10. 23 - 25</p>
         </div>
 
-        <div class="schedule-cards">
+        <div class="timetable">
 
-          <div class="day-card">
+          <div class="time-row">
             <span class="day-title">DAY 1</span>
-            <span class="day-date">10. 23</span>
-            <span class="day-time">15:00 - 18:00</span>
+            <div class="day-detail">
+              <span>10. 23</span>
+              <span>15:00 - 18:00</span>
+            </div>
           </div>
 
-          <div class="day-card">
+          <div class="time-row">
             <span class="day-title">DAY 2</span>
-            <span class="day-date">10. 24</span>
-            <span class="day-time">09:00 - 18:00</span>
+            <div class="day-detail">
+              <span>10. 24</span>
+              <span>09:00 - 18:00</span>
+            </div>
           </div>
 
-          <div class="day-card">
+          <div class="time-row">
             <span class="day-title">DAY 3</span>
-            <span class="day-date">10. 25</span>
-            <span class="day-time">09:00 - 15:00</span>
+            <div class="day-detail">
+              <span>10. 25</span>
+              <span>09:00 - 15:00</span>
+            </div>
           </div>
 
         </div>
@@ -526,6 +528,9 @@
         <h3>안양아트센터 갤러리 미담</h3>
 
         <p>경기 안양시 만안구 문예로36번길 16</p>
+
+        <div class="way-title">DIRECTIONS</div>
+        <p class="way-text">지도를 통해 전시장 위치와 오시는 길을 확인하실 수 있습니다.</p>
 
         <iframe
           class="map-frame"
@@ -547,7 +552,7 @@
 
   <section class="video-section">
 
-    <h2>OUR STORY</h2>
+    <h2>BEHIND THE VEIL</h2>
 
     <div class="video-box">
       VIDEO COMING SOON
